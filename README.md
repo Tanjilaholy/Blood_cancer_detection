@@ -22,7 +22,7 @@ The model is built using **Convolutional Neural Networks (CNN)** and deployed th
 pip install tensorflow streamlit opencv-python numpy matplotlib scikit-learn
 
 ```
-## 4. Technologies Used
+## 5. Technologies Used
 
 | Category | Tools / Frameworks |
 |-----------|-------------------|
@@ -36,21 +36,21 @@ pip install tensorflow streamlit opencv-python numpy matplotlib scikit-learn
 
 
 
-## 5.Implementation Steps
-## 5.1 Model Training
+## 6.Implementation Steps
+## 6.1 Model Training
 - Preprocess and resize input images (150x150 pixels)
 - Train CNN using labeled data
 - Apply class weighting to handle imbalance
 - Evaluate model using validation and test data
 - Convert trained model to `.tflite` format for deployment
-## 5.2  Deployment with Streamlit
+## 6.2  Deployment with Streamlit
 - Load `.tflite` model using TensorFlow Lite Interpreter
 - Design interactive interface using Streamlit
 - Allow image upload and perform real-time prediction
 - Display prediction result with visualization
 
 
-## 6. Live Demo
+## 7. Live Demo
 You can try the live version of the app here: [Blood Cancer Detection App](https://bloodcancerdetection-tndxzu5tfy7whzgosxs5tn.streamlit.app/)
 
 ## Authors
