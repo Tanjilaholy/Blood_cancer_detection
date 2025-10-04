@@ -3,19 +3,15 @@ from PIL import Image
 import numpy as np
 import tensorflow as tf
 
-# ===============================
 # Load TFLite model
-# ===============================
-tflite_model_path = "weights (2) (1).tflite"  # Replace with your uploaded tflite file in same folder
+
+tflite_model_path = "weights (2) (1).tflite"  
 interpreter = tf.lite.Interpreter(model_path=tflite_model_path)
 interpreter.allocate_tensors()
 
 input_details = interpreter.get_input_details()
 output_details = interpreter.get_output_details()
 
-# ===============================
-# PAGE CONFIG
-# ===============================
 st.set_page_config(
     page_title="Blood Cancer Detection",
     page_icon="🩸",
@@ -56,11 +52,11 @@ if uploaded_file is not None:
     img = Image.open(uploaded_file)
     st.image(img, caption="Uploaded Image", use_container_width=True)
     
-    # Preprocess
+
     img_array = np.array(img.resize((150,150)))/255.0
     img_array = np.expand_dims(img_array, axis=0).astype(np.float32)
-    
-    # Predict using TFLite
+
+
     interpreter.set_tensor(input_details[0]['index'], img_array)
     interpreter.invoke()
     pred = interpreter.get_tensor(output_details[0]['index'])
